@@ -1664,37 +1664,37 @@ async def auto_filter(client, msg, spoll=False):
         if settings.get('template'):
             TEMPLATE = settings['template']
         if imdb:
-            cap = TEMPLATE.format(
-                query=search,
-                title=imdb['title'],
-                votes=imdb['votes'],
-                aka=imdb["aka"],
-                seasons=imdb["seasons"],
-                box_office=imdb['box_office'],
-                localized_title=imdb['localized_title'],
-                kind=imdb['kind'],
-                imdb_id=imdb["imdb_id"],
-                cast=imdb['cast'],
-                runtime=imdb['runtime'],
-                countries=imdb['countries'],
-                certificates=imdb['certificates'],
-                languages=imdb['languages'],
-                director=imdb['director'],
-                writer=imdb['writer'],
-                producer=imdb['producer'],
-                composer=imdb['composer'],
-                cinematographer=imdb['cinematographer'],
-                music_team=imdb['music_team'],
-                distributors=imdb['distributors'],
-                release_date=imdb['release_date'],
-                year=imdb['year'],
-                genres=imdb['genres'],
-                poster=imdb['poster'],
-                plot=imdb['plot'] if settings.get('button') else "N/A",
-                rating=imdb['rating'],
-                url=imdb['url'],
-                **locals()
-            )
+         cap = TEMPLATE.format(
+    query=search,
+    title=imdb['title'],
+    votes=imdb['votes'],
+    aka=imdb["aka"],
+    seasons=imdb["seasons"],
+    box_office=imdb['box_office'],
+    localized_title=imdb['localized_title'],
+    kind=imdb['kind'],
+    imdb_id=imdb["imdb_id"],
+    cast=imdb['cast'],
+    runtime=imdb['runtime'],
+    countries=imdb['countries'],
+    certificates=imdb['certificates'],
+    languages=imdb['languages'],
+    director=imdb['director'],
+    writer=imdb['writer'],
+    producer=imdb['producer'],
+    composer=imdb['composer'],
+    cinematographer=imdb['cinematographer'],
+    music_team=imdb['music_team'],
+    distributors=imdb['distributors'],
+    release_date=imdb['release_date'],
+    year=imdb['year'],
+    genres=imdb['genres'],
+    poster=imdb['poster'],
+    plot=imdb['plot'] if settings.get('button') else "N/A",
+    rating=imdb['rating'],
+    url=imdb['url'],
+    **locals()
+)
             temp.IMDB_CAP[message.from_user.id] = cap
             if not settings.get('button'):
                 cap += "\n\n<b><u>Your Requested Files Are Here</u></b>\n\n"
